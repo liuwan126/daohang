@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>导航交互页面</title>
+    <meta name="description" content="原生JS实现导航栏的下拉及显示">
+    <meta name="generator" content="WebStorm">
+    <meta name="author" content="刘婉">
+    <link href="css/daohang.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<ul  class="ul1">
+    <li class="two"><a href="">首页</a>
+        <ul class="ul2">
+            <li class="one"><a href="">新闻</a></li>
+            <li class="one"><a href="">体育</a></li>
+            <li class="one"><a href="">财经</a></li>
+        </ul>
+    <li>
+    <li class="two"><a href="">房产</a>
+        <ul class="ul2">
+            <li class="one"><a href="">二手房</a></li>
+            <li class="one"><a href="">家居</a></li>
+            <li class="one"><a href="">出租房</a></li>
+        </ul>
+    </li>
+    <li class="two"><a href="">娱乐</a>
+        <ul class="ul2">
+            <li class="one"><a href="">视频</a></li>
+            <li class="one"><a href="">美剧</a></li>
+            <li class="one"><a href="">韩剧</a></li>
+        </ul></li>
+    <li class="two"><a href="">美食</a>
+        <ul class="ul2">
+            <li class="one"><a href="">文化</a></li>
+            <li class="one"><a href="">历史</a></li>
+            <li class="one"><a href="">烹饪</a></li>
+        </ul></li>
+    <li class="two"><a href="">联系我们</a>
+        <ul class="ul2">
+            <li class="one"><a href="">邮箱</a></li>
+            <li class="one"><a href="">电话</a></li>
+            <li class="one"><a href="">地址</a></li>
+        </ul>
+    </li>
+</ul>
+<script type="text/javascript">
+    window.onload = function(){
+        var li=document.getElementsByClassName("two");
+        var ul=document.getElementsByClassName("ul2");
+        console.log(li);
+        for(var i=0;i<li.length;i++) {
+            (function (j) {
+                li[i].onmouseover = function (event) {
+                    ul[j].style.display = "block";
+                }
+                li[i].onmouseout = function (event) {
+                    ul[j].style.display = "none";
+                }
+            })(i)
+        }
+    }
+</script>
+</body>
+</html>
