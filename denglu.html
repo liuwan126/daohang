@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+    <link href="css/denglu.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="div1">
+<div id="div2">
+<form action="" method="post" id="from1" enctype="application/x-www-form-urlencoded">
+    Email:<input type="text" name="email" id="email"/>
+    <p id="pmail"></p>
+    Passsword:<input type="password" name="password" id="password"/>
+    <p id="ppasw"></p>
+    <input type="button" name="button" id="button" value="Sign in"/>
+</form>
+</div>
+</div>
+<script type="text/javascript">
+    window.onload=function () {
+        var btn=document.getElementById("button");
+        var mail=document.getElementById("email");
+        var pasw=document.getElementById("password");
+        var pm=document.getElementById("pmail");
+        var pp=document.getElementById("ppasw");
+            mail.onblur =function (event) {
+                var mail=document.getElementById("email");
+                //当执行alert()弹出提示的时候，使用onblur事件将触发多次操作,这是一个bug
+                if (mail.value == "") {
+//                    console.log("The email is not null,please rewrite! ");
+
+                    pm.innerText="The email is not null!";
+                    setTimeout(function () {
+                        pm.innerText="";
+                    },2000);
+                    return  false
+                }
+            }
+            pasw.onblur =function () {
+                 var pasw=document.getElementById("password");
+                if (pasw.value == "") {
+//                    console.log("The password is not null,please rewrite! ");
+                    pp.innerText="The password is not null!";
+                    setTimeout(function () {
+                        pp.innerText="";
+                    },2000);
+                    return false;
+                }
+            }
+    }
+</script>
+</body>
+</html>
